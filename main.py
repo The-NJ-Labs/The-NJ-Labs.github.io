@@ -27,7 +27,6 @@ st.markdown("""
         <p>The Open-source Organization for Developers by Developers</p>
         <p style="font-size: 0.9rem;">Made by 'Mahir29Flame' A.K.A 'NJ'</p>
     </div>
-    <iframe src="Index.html" width="100%" height="600px"></iframe>
     """, unsafe_allow_html=True)
 
 # Example of a break line
