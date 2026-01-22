@@ -1,57 +1,117 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The NJ Labs</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.39.0/build/stlite.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.39.0/build/stlite.js"></script>
-    <script>
-      stlite.mount(
-        {
-          requirements: ["streamlit"], // Add any other pypi packages here
-          entrypoint: "main.py",
-          files: {
-            "main.py": `
-import streamlit as st
-
-st.set_page_config(page_title="The NJ Labs", page_icon="💻")
-st.sidebar.title("Navigation")
-
-st.markdown("""
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #ff4b4b;
+            --background-color: #0e1117;
+            --secondary-background-color: #262730;
+            --text-color: #fafafa;
+            --font: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 300px;
+            background-color: var(--secondary-background-color);
+            padding: 2rem 1rem;
+            height: 100vh;
+            position: fixed;
+            border-right: 1px solid rgba(250, 250, 250, 0.1);
+        }
+
+        .sidebar h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .main {
+            margin-left: 300px;
+            padding: 3rem 5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .header-container {
             margin-bottom: 40px;
             text-align: center;
+            width: 100%;
         }
+
         .header-container h1 {
             margin-bottom: 0px;
             padding-bottom: 5px;
+            font-size: 3rem;
+            font-weight: 700;
         }
+
         .header-container p {
             margin-top: -10px;
             margin-bottom: 5px;
             color: #808495;
             font-size: 1.1rem;
         }
-    </style>
-    <div class="header-container">
-        <h1>The NJ Labs</h1>
-        <p>The Open-source Organization for Developers by Developers</p>
-        <p style="font-size: 0.9rem;">Made by 'Mahir29Flame' A.K.A 'NJ'</p>
-    </div>
-    """, unsafe_allow_html=True)
 
-st.divider()
-            `,
-          },
-        },
-        document.getElementById("root")
-      );
-    </script>
-  </body>
+        .divider {
+            height: 1px;
+            width: 100%;
+            background-color: rgba(250, 250, 250, 0.1);
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2>Navigation</h2>
+    </aside>
+
+    <main class="main">
+        <div class="header-container">
+            <h1>The NJ Labs</h1>
+            <p>The Open-source Organization for Developers by Developers</p>
+            <p style="font-size: 0.9rem;">Made by 'Mahir29Flame' A.K.A 'NJ'</p>
+        </div>
+
+        <div class="divider"></div>
+    </main>
+</body>
+        
 </html>
