@@ -1,3 +1,11 @@
+// Set current year in footer
+document.addEventListener('DOMContentLoaded', () => {
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -20,7 +28,7 @@ window.addEventListener('scroll', () => {
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 200)) {
+        if (window.pageYOffset >= (sectionTop - 200)) {
             current = section.getAttribute('id');
         }
     });

@@ -72,6 +72,11 @@ body {
     color: var(--primary-color);
 }
 
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
