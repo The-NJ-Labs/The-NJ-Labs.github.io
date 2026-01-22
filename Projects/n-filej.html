@@ -33,26 +33,112 @@
                 style="color: var(--primary-accent); font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
                 Project</p>
             <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">N-FileJ</h1>
-            <p class="subtitle">A brief description of what N-FileJ achieves goes here. This is the main text area for
-                the project.</p>
+            <p class="subtitle">A simple, TUI-based file manager written in Python using Textual.</p>
         </header>
 
         <div class="divider"></div>
 
         <section class="content">
-            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
-                Detailed documentation and "main text" regarding N-fileJ resides here.
-                This section is dedicated to explaining the features, installation, and usage of the project.
-            </p>
+            <img src="https://github.com/user-attachments/assets/5621d021-466b-40c9-aca1-16258dc90622"
+                alt="N-FileJ Screenshot"
+                style="width: 100%; border-radius: 8px; margin-bottom: 2rem; border: 1px solid var(--border-color);">
 
+            <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Features</h2>
+            <ul
+                style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem; color: var(--text-muted); line-height: 1.6;">
+                <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-color);">Directory
+                        Navigation</strong>: Browse your files and folders in a terminal-based interface.</li>
+                <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-color);">File Opening</strong>:
+                    Open files directly in your system's default editor (Windows) or the one defined in your $EDITOR
+                    environment variable.</li>
+                <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-color);">Dark Mode</strong>:
+                    Support for both light and dark themes.</li>
+                <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-color);">Many Themes</strong>:
+                    Includes all Textual themes.</li>
+                <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-color);">Lightweight</strong>:
+                    Fast and simple, built for the terminal.</li>
+            </ul>
+
+            <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Installation</h2>
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">Install using <code>pipx</code> (recommended):
+            </p>
             <div
-                style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                <code style="font-family: monospace; color: #a5b4fc;">pipx install n-filej</code>
+            </div>
+
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">Or via <code>uv</code>:</p>
+            <div
+                style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                <code style="font-family: monospace; color: #a5b4fc;">uv tool install n-filej</code>
+            </div>
+
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">Or via <code>pip</code>:</p>
+            <div
+                style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 2rem;">
                 <code style="font-family: monospace; color: #a5b4fc;">pip install n-filej</code>
             </div>
 
-            <div style="margin-top: 2rem;">
-                <!-- Placeholder for more content -->
-                <p>More features coming soon...</p>
+            <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Keybindings</h2>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
+                    <thead>
+                        <tr style="text-align: left; border-bottom: 1px solid var(--border-color);">
+                            <th style="padding: 0.75rem 0;">Key</th>
+                            <th style="padding: 0.75rem 0;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: var(--text-muted);">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0;"><code
+                                    style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 4px;">Q</code>
+                            </td>
+                            <td style="padding: 0.75rem 0;">Quit the application</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0;"><code
+                                    style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 4px;">Alt+T</code>
+                            </td>
+                            <td style="padding: 0.75rem 0;">Toggle Dark mode</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0;"><code
+                                    style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 4px;">Alt+Shift+N</code>
+                            </td>
+                            <td style="padding: 0.75rem 0;">Create a new folder</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0;"><code
+                                    style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 4px;">Delete</code>
+                            </td>
+                            <td style="padding: 0.75rem 0;">Delete a folder/file</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0;"><code
+                                    style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 4px;">F2</code>
+                            </td>
+                            <td style="padding: 0.75rem 0;">Rename a folder/file</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0;"><code
+                                    style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 4px;">Enter</code>
+                            </td>
+                            <td style="padding: 0.75rem 0;">Open a file or expand/collapse a directory</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 0.75rem 0;"><code
+                                    style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 4px;">Arrow
+                                    Keys</code></td>
+                            <td style="padding: 0.75rem 0;">Navigate the file tree</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Usage</h2>
+            <div
+                style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <code style="font-family: monospace; color: #a5b4fc;">n-filej</code>
             </div>
         </section>
     </main>
