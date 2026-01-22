@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>hello</h1>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>The NJ Labs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.39.0/build/stlite.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.39.0/build/stlite.js"></script>
+    <script>
+      stlite.mount(
+        {
+          requirements: ["streamlit"], // Add any other pypi packages here
+          entrypoint: "main.py",
+          files: {
+            "main.py": `
+import streamlit as st
+
+st.set_page_config(page_title="The NJ Labs", page_icon="💻")
+st.sidebar.title("Navigation")
+
+st.markdown("""
+    <style>
+        .header-container {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .header-container h1 {
+            margin-bottom: 0px;
+            padding-bottom: 5px;
+        }
+        .header-container p {
+            margin-top: -10px;
+            margin-bottom: 5px;
+            color: #808495;
+            font-size: 1.1rem;
+        }
+    </style>
+    <div class="header-container">
+        <h1>The NJ Labs</h1>
+        <p>The Open-source Organization for Developers by Developers</p>
+        <p style="font-size: 0.9rem;">Made by 'Mahir29Flame' A.K.A 'NJ'</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.divider()
+            `,
+          },
+        },
+        document.getElementById("root")
+      );
+    </script>
+  </body>
 </html>
