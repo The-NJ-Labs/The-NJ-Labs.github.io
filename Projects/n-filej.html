@@ -18,7 +18,7 @@
 
 <body>
     <aside class="sidebar">
-        <h2>The NJ Labs</h2>
+        <h2 id="sidebar-title"><span>The NJ Labs</span></h2>
         <ul class="nav-items">
             <li class="nav-item"><a href="../Index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link active">N-FileJ</a></li>
@@ -39,12 +39,17 @@
         <div class="divider"></div>
 
         <section class="content">
-            <img src="https://private-user-images.githubusercontent.com/183743166/539029923-31569b1e-6e7f-4d0d-9234-8aed97a69103.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkwNzEwODEsIm5iZiI6MTc2OTA3MDc4MSwicGF0aCI6Ii8xODM3NDMxNjYvNTM5MDI5OTIzLTMxNTY5YjFlLTZlN2YtNGQwZC05MjM0LThhZWQ5N2E2OTEwMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDEyMlQwODMzMDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yN2E4MTY3ZGJlNzgyZjFlOWQwMGNkY2M0YWVlM2IxMWI5NGFhMGQxYjA4YjA1MzFhNWY1NDZlODM1NmFhN2RkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.2oWKFj_a7fVLfNbroJ5rHpYVcZ3meUy5QBBKpRx21V4"
-                alt="N-FileJ Screenshot"
+            <img src="../assets/n-filej.png" alt="N-FileJ Screenshot"
                 style="width: 100%; border-radius: 8px; margin-bottom: 2rem; border: 1px solid var(--border-color);">
-            <a href="https://pepy.tech/projects/n-filej">
-            <img src="https://static.pepy.tech/personalized-badge/n-filej?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=Downloads" alt="PyPI Downloads">
-            </a>            
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                <a href="https://pepy.tech/projects/n-filej" target="_blank" rel="noopener">
+                    <img src="https://static.pepy.tech/personalized-badge/n-filej?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=Downloads"
+                        alt="Downloads">
+                </a>
+                <a href="https://pypi.org/project/n-filej/" target="_blank" rel="noopener">
+                    <img src="../assets/pypi-logo.svg" alt="PyPI" style="height: 30px;">
+                </a>
+            </div>
             <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Features</h2>
             <ul
                 style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem; color: var(--text-muted); line-height: 1.6;">
@@ -144,6 +149,7 @@
             </div>
         </section>
     </main>
+    <script src="../script.js"></script>
 </body>
 
 </html>

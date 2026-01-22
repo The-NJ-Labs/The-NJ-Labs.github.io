@@ -1,5 +1,7 @@
 :root {
-    --primary-accent: #6366f1; /* Indigo */
+    color-scheme: dark;
+    --primary-accent: #6366f1;
+    /* Indigo */
     --primary-hover: #4f46e5;
     --bg-dark: #030712;
     --bg-card: rgba(17, 24, 39, 0.7);
@@ -20,9 +22,9 @@
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
-    background-image: 
-        radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 100% 100%, rgba(99, 102, 241, 0.1) 0%, transparent 40%);
+    background-image:
+        radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.15) 0%, rgba(3, 7, 18, 0) 40%),
+        radial-gradient(circle at 100% 100%, rgba(99, 102, 241, 0.1) 0%, rgba(3, 7, 18, 0) 40%);
     color: var(--text-main);
     display: flex;
     min-height: 100vh;
@@ -31,9 +33,15 @@ body {
 }
 
 /* Sidebar */
+/* Sidebar */
+:root {
+    --sidebar-width: 280px;
+}
+
 .sidebar {
-    width: 280px;
+    width: var(--sidebar-width);
     background-color: var(--sidebar-bg);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
     backdrop-filter: blur(var(--glass-blur));
     border-right: 1px solid var(--border-color);
     padding: 2.5rem 1.5rem;
@@ -41,6 +49,70 @@ body {
     position: fixed;
     z-index: 100;
     transition: var(--transition);
+    /* Keep transition for smooth toggle, might conflict with drag but acceptable */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+    padding: 2.5rem 1rem;
+}
+
+.sidebar.collapsed .sidebar-text,
+.sidebar.collapsed h2 span {
+    display: none;
+}
+
+.sidebar.collapsed h2 {
+    justify-content: center;
+    margin-right: 0;
+}
+
+.sidebar.collapsed h2::before {
+    margin-right: 0;
+}
+
+.sidebar.collapsed .nav-link {
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 1rem;
+    right: -1rem;
+    /* Removed to place inside or on border, let's place it top right inside */
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.sidebar-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--primary-accent);
+}
+
+.sidebar-resizer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+    background: transparent;
+    transition: background 0.3s;
+}
+
+.sidebar-resizer:hover,
+.sidebar-resizer:active {
+    background: var(--primary-accent);
 }
 
 .sidebar h2 {
@@ -84,7 +156,8 @@ body {
     font-weight: 500;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-main);
     transform: translateX(5px);
@@ -96,7 +169,7 @@ body {
 
 /* Main Content */
 .main {
-    margin-left: 280px;
+    margin-left: var(--sidebar-width);
     padding: 4rem 6rem;
     flex-grow: 1;
     max-width: 1400px;
@@ -105,8 +178,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .header-container {
@@ -123,10 +203,7 @@ body {
     font-size: 4.5rem;
     font-weight: 800;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ffffff;
     margin-bottom: 1rem;
     line-height: 1.1;
 }
@@ -173,10 +250,12 @@ body {
 
 .card {
     background-color: var(--bg-card);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
     backdrop-filter: blur(var(--glass-blur));
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 0; /* Changed for image top */
+    padding: 0;
+    /* Changed for image top */
     transition: var(--transition);
     cursor: default;
     overflow: hidden;
@@ -285,6 +364,7 @@ body {
     .main {
         padding: 3rem;
     }
+
     .header-container h1 {
         font-size: 3rem;
     }
@@ -312,7 +392,8 @@ body {
     }
 
     .nav-items {
-        display: none; /* Hide on mobile for now */
+        display: none;
+        /* Hide on mobile for now */
     }
 
     .main {
